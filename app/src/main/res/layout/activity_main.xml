@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Source Account Number"
+                    android:textColor="#FF0000" />
+
+                <EditText
+                    android:id="@+id/serinumberLoyalty"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:layout_width="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Target Account Number"
+                    android:textColor="#FF0000" />
+
+                <EditText
+                    android:id="@+id/serinumberLoyalty"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:layout_width="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer Amount"
+                    android:textColor="#FF0000" />
+
+                <EditText
+                    android:id="@+id/serinumberLoyalty"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:layout_width="match_parent" />
+            </LinearLayout>
+
+
+<!--
+android:layout_gravity="center"
+-->
+            <LinearLayout
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal">
+
+              <!--
+              android:onClick="click_save_data">
+              android:gravity = "center"
+            </Button>
+              -->
+                <Button
+                    android:id = "@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text = "Submit"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <FrameLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="250dp"
+                  android:layout_weight="1">
+            </FrameLayout>
+
+            <LinearLayout
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal">
+
+              <!--
+              android:layout_width="wrap_content"
+              android:layout_gravity="center"
+              android:textColor="#FF0000" />
+              -->
+              <TextView
+                android:id="@+id/tvPermissionStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="status"
+                android:gravity="center"
+                android:textColor="#0000FF" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

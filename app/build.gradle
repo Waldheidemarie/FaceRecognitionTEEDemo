@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.hms.localauth.facerecdemo"
+        minSdkVersion 28
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+// added by Alan (2020-7-1)
+repositories {
+    maven {
+        url 'https://maven.google.com'
+    }
+
+    flatDir {
+        dirs 'libs' // this way we can find the .aar file in libs folder
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Section 1 (added by Alan (2020-7-1))
+    //implementationfileTree(include:['*.jar'],dir:'libs')
+    // Error: Could not find method implementationfileTree() for arguments [{include=[*.jar], dir=libs}] on object of type org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler.
+
+    implementation(name: 'hwlocalAuthenticationKit-1.0.1', ext: 'aar')
+    // ERROR: Could not resolve all task dependencies for configuration ':app:debugCompileClasspath'.
+    //          Could not find :hwlocalAuthenticationKit-1.0.1:.
+
+    //implementation('hwlocalAuthenticationKit-1.0.1@aar')
+    // ERROR: Supplied String module notation 'hwlocalAuthenticationKit-1.0.1' is invalid. Example notations: 'org.gradle:gradle-core:2.2', 'org.mockito:mockito-core:1.9.5:javadoc'.
+
+    //implementation('com.huawei.security.localauthentication:hwlocalAuthenticationKit-1.0.1:aar')
+
+    //implementation('com.huawei.security.localauthentication.\"1.0.1\":hwlocalAuthenticationKit-1.0.1@aar')
+    // ERROR: Failed to resolve: com.huawei.security.localauthentication."1.0.1":hwlocalAuthenticationKit-1.0.1:
+
+    //implementation('com.huawei.security.localauthentication:hwlocalAuthenticationKit-1.0.1@aar')
+    // ERROR: Failed to resolve: com.huawei.security.localauthentication:hwlocalAuthenticationKit-1.0.1:
+
+    //implementation('com.huawei.security.localauthentication.\"1.0.1\":hwlocalAuthenticationKit-1.0.1:1.0.1@aar')
+    // ERROR: Failed to resolve: com.huawei.security.localauthentication."1.0.1":hwlocalAuthenticationKit-1.0.1:1.0.1
+
+    //implementation('com.huawei.security.localauthentication.1.0.1:hwlocalAuthenticationKit-1.0.1:1.0.1@aar') // ERROR
+
+    //implementation('com.huawei.security.localauthentication:hwlocalAuthenticationKit-1.0.1:1.0.1@aar')
+    // ERROR: Failed to resolve: com.huawei.security.localauthentication:hwlocalAuthenticationKit-1.0.1:1.0.1
+
+}
