@@ -1,0 +1,7 @@
+This is a demo app using HMS Face Recognition feature in Local Authentication Kit. This is the demo app simulating a person who is doing the bank transfer in a public place. During the transfer configuration screen, the app scans the user's face every 2 seconds and compares its features with the pre-saved face data in the phone. If the false face is detected, it switches to the security question screen to ask the user's question in order to identify the right person. Only when the correct answer is entered, the app goes back to the bank transfer screen. This demonstrate a use case for a user who is doing this activity in the public place and has left the unattended phone in the desk when going to a restroom. This added security will prevent any unauthorized person from accessing the sensitive data in the phone when an incident happens.   
+
+Preparation:
+In order to run this app successfully, you need to use an Huawei phone with face recognition capability. An example will be an EMUI 10.0 phone. To set it up, go to Settings and choose "Biometrics & pawword". And then select Face Recognition and follow the prompts to scan your own face to store it. 
+
+Run the app:
+Start the app and follow the instructions to login into the app. During the bank trannsfer screen, either leave the phone in the desk and go away, or use your hand to cover the camera. The app immediately switch to the sccurity question screen. To answer the security question correctly, enter your answer "Beijing" and the app goes back to the original screen. 
